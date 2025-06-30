@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Métadonnées de la page (encodage, titre, description, favicon, responsive, etc.) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMAudio - Nicolas Martin | Mastering Professionnel Audio</title>
+    <meta name="description"
+        content="Nicolas Martin - Expert en mastering audio pour CD, Digital, Deezer, Qobuz, Tidal et Spotify. Services professionnels de mixage et mastering haute qualité.">
+    <meta name="keywords"
+        content="Nicolas Martin, mastering, NMAudio, mastering cd, mastering digital, mastering deezer, mastering qobuz, mastering tidal, mastering spotify, ingénieur son, mixage audio, production sonore">
+    <meta name="author" content="Nicolas Martin">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="assets/img/logo.png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+
+    <!-- Importation de Tailwind CSS et de la feuille de style personnalisée -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="bg-white text-blue-950">
+    <!-- Barre de navigation principale (fixée en haut de la page) -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo du site -->
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold gradient-text bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
+                        <a href="#accueil">
+                            <img src="assets/img/Logo_bleu.png" alt="Logo NMAudio" class="inline-block h-20 mr-2">
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menu de navigation pour les écrans larges (desktop) -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#accueil" class="hover:text-blue-700 transition-colors">Accueil</a>
+                        <a href="#tarifs" class="hover:text-blue-700 transition-colors">Tarifs</a>
+                        <a href="#portfolio" class="hover:text-blue-700 transition-colors">Réalisations</a>
+                        <a href="#equipements" class="hover:text-blue-700 transition-colors">Equipements</a>
+                        <a href="#about" class="hover:text-blue-700 transition-colors">À propos</a>
+                        <a href="#contact" class="hover:text-blue-700 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Bouton pour ouvrir le menu mobile -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-blue-900 hover:text-blue-700 transition-colors">
+                        <!-- Icône hamburger -->
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu de navigation mobile (affiché sur petits écrans) -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-16 right-0 h-full w-64 bg-white shadow-lg border-l border-blue-100 z-40">
+            <div class="py-4">
+                <!-- Liens du menu mobile -->
+                <a href="#accueil" class="block px-6 py-3 text-blue-900 bg-white hover:bg-blue-50 hover:text-blue-700 transition-colors border-b border-blue-100">
+                    Accueil
+                </a>
+                <a href="#tarifs" class="block px-6 py-3 text-blue-900 bg-white hover:bg-blue-50 hover:text-blue-700 transition-colors border-b border-blue-100">
+                    Tarifs
+                </a>
+                <a href="#portfolio" class="block px-6 py-3 text-blue-900 bg-white hover:bg-blue-50 hover:text-blue-700 transition-colors border-b border-blue-100">
+                    Réalisations
+                </a>
+                <a href="#equipements" class="block px-6 py-3 text-blue-900 bg-white hover:bg-blue-50 hover:text-blue-700 transition-colors border-b border-blue-100">
+                    Equipements
+                </a>
+                <a href="#about" class="block px-6 py-3 text-blue-900 bg-white hover:bg-blue-50 hover:text-blue-700 transition-colors border-b border-blue-100">
+                    À propos
+                </a>
+                <a href="#contact" class="block px-6 py-3 text-blue-900 bg-white hover:bg-blue-50 hover:text-blue-700 transition-colors">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Overlay sombre pour fermer le menu mobile en cliquant à côté -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+
+    <!-- Section d'accueil (Hero) avec image de fond et présentation -->
+    <section id="accueil" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+        style="background-image: url('assets/img/fond.jpg'); background-size: cover; background-position: center;">
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+                <!-- Texte de bienvenue et description -->
+                <div class="md:w-2/3 w-full text-center md:text-left fade-in">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Bienvenue chez
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">NMAudio</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-blue-900 max-w-3xl mx-auto md:mx-0 leading-relaxed">
+                        Chaque projet est traité avec <strong>soin, rigueur et respect.</strong><br>
+                        Pas de fioritures, pas d'artifices, juste un <strong>travail précis</strong> pour que la musique
+                        sonne <strong>claire et juste.</strong><br><br>
+                        L'écoute guide chaque étape, bien plus que les outils ou les modes.<br>
+                        <strong>L'objectif :</strong> révéler ce que chaque musique porte en elle, sans la
+                        dénaturer.<br><br>
+                        Un accompagnement pour la dernière étape avant diffusion, afin que le son soit prêt à vivre
+                        partout.<br><br>
+                        <strong>Simple, authentique, efficace.</strong><br>
+                    </p>
+                    <!-- Boutons d'appel à l'action -->
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center md:justify-center mt-10">
+                        <a href="#tarifs"
+                            class="bg-blue-900 text-white px-10 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 pulse-glow text-center">
+                            Découvrir nos tarifs
+                        </a>
+                        <a href="#contact"
+                            class="border-2 border-blue-900 text-blue-900 px-10 py-4 rounded-full font-semibold hover:bg-blue-900 hover:text-white transition-all transform hover:scale-105 text-center">
+                            Nous contacter
+                        </a>
+                    </div>
+                </div>
+                <!-- Logo certifié à droite -->
+                <div class="md:w-1/3 w-full flex justify-center">
+                    <img src="assets/img/Logo_certifie.png" alt="Logo NMAudio"
+                        class="w-64 md:w-80 lg:w-96 rounded-2xl shadow-lg opacity-90 object-contain bg-white/80 p-4"
+                        style="max-width:90vw;" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tarifs : présentation des offres et prix -->
+    <section id="tarifs" class="py-20 bg-white">
+        <div class="max-w-8xl mx-auto px-2 sm:px-4 lg:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-blue-900 mb-6 tracking-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">Tarifs
+                    </span>2025
+                </h2>
+                <p class="text-xl text-blue-900 max-w-3xl mx-auto">
+                    Une gamme complète de services audio pour tous vos projets professionnels
+                </p>
+            </div>
+
+            <!-- Grille des différentes offres de mastering -->
+            <div class="grid grid-cols-2 xl:grid-cols-4 gap-8">
+                <!-- Offre Mastering Single -->
+                <div class="group relative flex flex-col h-full">
+                    <!-- Effet de survol visuel -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-900 to-blue-700 blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 rounded-2xl pointer-events-none"
+                        style="height: 100%;">
+                    </div>
+                    <div
+                        class="relative bg-blue-900/5 backdrop-blur-lg rounded-2xl p-8 border border-blue-900/10 hover:border-blue-900/30 transition-all duration-300 hover:transform hover:scale-105 flex flex-col h-full">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">Mastering Single</h3>
+                            <div class="text-4xl font-bold text-blue-700 mb-1">50€ HT</div>
+                            <div class="text-lg text-blue-900"><i>(60€ TTC / Titre)</i></div>
+                        </div>
+                        <!-- Liste des avantages de l'offre -->
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start space-x-3">
+                                <!-- Icône check -->
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">1 fichier stéréo (WAV ou AIFF)</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Jusqu'à 2 révisions incluses</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Livraison WAV 24 bits</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Adaptation loudness plateformes (Spotify, Apple Music,
+                                    etc.)</span>
+                            </li>
+                            <!-- Option supplémentaire -->
+                            <p class="text-blue-700 text-sm"><i>Option traitement Hardware 100€ HT / Titre <br>(120€ TTC
+                                    / Titre)</i></p>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Offre EP (3 à 6 titres) -->
+                <div class="group relative flex flex-col h-full">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 pointer-events-none"
+                        style="height: 100%;">
+                    </div>
+                    <div
+                        class="relative bg-blue-900/5 backdrop-blur-lg rounded-2xl p-8 border border-blue-900/10 hover:border-blue-900/30 transition-all duration-300 hover:transform hover:scale-105 flex flex-col h-full">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">EP (3 à 6 Titres)</h3>
+                            <div class="text-4xl font-bold text-blue-700 mb-1">45€ HT</div>
+                            <div class="text-lg text-blue-900"><i>(54€ TTC / Titre)</i></div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <!-- Avantages de l'offre EP -->
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Traitement homogène sur l'ensemble du projet</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Jusqu'à 2 révisions par titre</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Livraison WAV 24 bits</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Séquencement / Niveau cohérent entre les morceaux</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Adaptation loudness plateformes (Spotify, Apple Music,
+                                    etc.)</span>
+                            </li>
+                            <p class="text-blue-700 text-sm"><i>Option traitement Hardware 90€ HT / Titre <br>(108€ TTC
+                                    / Titre)</i></p>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Offre Album (7 à 12 titres) -->
+                <div class="group relative flex flex-col h-full">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 pointer-events-none"
+                        style="height: 100%;">
+                    </div>
+                    <div
+                        class="relative bg-blue-900/5 backdrop-blur-lg rounded-2xl p-8 border border-blue-900/10 hover:border-blue-900/30 transition-all duration-300 hover:transform hover:scale-105 flex flex-col h-full">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">Album (7 à 12 Titres)</h3>
+                            <div class="text-4xl font-bold text-blue-700 mb-1">40€ HT</div>
+                            <div class="text-lg text-blue-900"><i>(48€ TTC / Titre)</i></div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <!-- Avantages de l'offre Album -->
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Traitement homogène sur l'ensemble du projet</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Jusqu'à 2 révisions par titre</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Livraison WAV 24 bits</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Séquencement / Niveau cohérent entre les morceaux</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Adaptation loudness plateformes (Spotify, Apple Music,
+                                    etc.)</span>
+                            </li>
+                            <p class="text-blue-700 text-sm"><i>Option traitement Hardware 80€ HT / Titre <br>(96€ TTC /
+                                    Titre)</i></p>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Option DDP pour pressage CD Audio -->
+                <div class="group relative flex flex-col h-full">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-900 to-blue-700 blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 rounded-2xl pointer-events-none"
+                        style="height: 100%;">
+                    </div>
+                    <div
+                        class="relative bg-blue-900/5 backdrop-blur-lg rounded-2xl p-8 border border-blue-900/10 hover:border-blue-900/30 transition-all duration-300 hover:transform hover:scale-105 flex flex-col h-full">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-2">Option DDP pour pressage CD Audio</h3>
+                            <div class="text-4xl font-bold text-blue-700 mb-1">45€ HT</div>
+                            <div class="text-lg text-blue-900"><i>(54€ TTC)</i></div>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <!-- Avantages de l'option DDP -->
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Export au format standard CD Audio 44,1 khz / 16 bits</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Création d'une image DDP avec vérification</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Fourniture du dossier prêt à graver</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-blue-900">Compatible avec toutes les usines de pressage</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Section Portfolio : exemples de réalisations (liens vers YouTube) -->
+    <section id="portfolio" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl font-bold text-blue-900 mb-6 tracking-tight">Nos <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">Réalisations</span>
+                </h2>
+            </div>
+            <!-- Grille des réalisations (images cliquables) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Exemple de réalisation -->
+                <div class="relative">
+                    <a href="https://www.youtube.com/watch?v=rMlMgYKeuIs&list=RDrMlMgYKeuIs&start_radio=1"
+                        target="_blank" rel="noopener">
+                        <img src="assets/img/Réalisations/Vanishing Point.jpg" alt="Vanishing Point"
+                            class="h-100 w-100 object-cover rounded-xl hover:scale-105 transition-transform duration-300" />
+                    </a>
+                </div>
+                <!-- Répéter pour chaque projet -->
+                <div class="relative">
+                    <a href="https://www.youtube.com/watch?v=3KnFUBxX42k&list=RD3KnFUBxX42k&start_radio=1"
+                        target="_blank" rel="noopener">
+                        <img src="assets/img/Réalisations/Va Temps!.jpg" alt="Va Temps!"
+                            class="h-100 w-100 object-cover rounded-xl hover:scale-105 transition-transform duration-300" />
+                    </a>
+                </div>
+                <div class="relative">
+                    <a href="https://www.youtube.com/watch?v=Enai4-CcfHo&list=RDEnai4-CcfHo&start_radio=1"
+                        target="_blank" rel="noopener">
+                        <img src="assets/img/Réalisations/Songware - Sad Dancer.jpg" alt="Songware - Sad Dancer"
+                            class="h-100 w-100 object-cover rounded-xl hover:scale-105 transition-transform duration-300" />
+                    </a>
+                </div>
+                <div class="relative">
+                    <a href="https://www.youtube.com/watch?v=wCg-aetPqKM" target="_blank" rel="noopener">
+                        <img src="assets/img/Réalisations/MANSIRE - QUAND J’ARRIVE.jpg" alt="MANSIRE - QUAND J’ARRIVE"
+                            class="h-100 w-100 object-cover rounded-xl hover:scale-105 transition-transform duration-300" />
+                    </a>
+                </div>
+                <div class="relative">
+                    <a href="https://www.youtube.com/watch?v=g43hAhgYqsw&list=RDg43hAhgYqsw&start_radio=1"
+                        target="_blank" rel="noopener">
+                        <img src="assets/img/Réalisations/Bout d'Été.png" alt="Bout d'Été"
+                            class="h-100 w-100 object-cover rounded-xl hover:scale-105 transition-transform duration-300" />
+                    </a>
+                </div>
+                <div class="relative">
+                    <a href="https://www.youtube.com/watch?v=Z1hUwW6Zfu0&list=RDZ1hUwW6Zfu0&start_radio=1"
+                        target="_blank" rel="noopener">
+                        <img src="assets/img/Réalisations/Ce que je vaux.jpg" alt="Ce que je vaux"
+                            class="h-100 w-100 object-cover rounded-xl hover:scale-105 transition-transform duration-300" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Equipements : liste du matériel utilisé -->
+    <section id="equipements" class="py-20 bg-white">
+        <!-- Titre et description des équipements -->
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold text-blue-900 mb-6 tracking-tight">
+                Nos <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">Équipements</span>
+            </h2><br>
+            <!-- Liste des équipements logiciels -->
+            <div class="text-lg text-blue-900 mb-8">
+                <p class="text-xl text-blue-900 max-w-3xl mx-auto leading-relaxed">
+                    Atohm Sirocco 1.24<br> Atohm GT-SW2-HD<br> Universal Audio Apollo X6<br> Sonnox Plugins<br>
+                    Fabfilter Plugins<br> Izotope Plugins<br> UAD Plugins<br>
+                </p>
+            </div>
+            <!-- Liste des équipements hardware (studio partenaire) -->
+            <h3 class="text-3xl font-bold text-blue-900 mb-4">Hardware // Studio Partenaire</h3>
+            <div class="text-lg text-blue-900 mb-8">
+                <p class="text-xl text-blue-900 max-w-3xl mx-auto leading-relaxed">
+                    Crane Song HEDD Quantum<br> Manley Vari-Mu<br> Avalon AD2055<br> W492 Tornade Music System<br> SSL
+                    Fusion<br> TK Audio BC1
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos : présentation du fondateur -->
+    <section id="about" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl font-bold text-blue-900 mb-6 tracking-tight">
+                    À propos de <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700">NMAudio</span>
+                </h2>
+                <!-- Bloc avec texte de présentation et photo -->
+                <div
+                    class="flex flex-col md:flex-row items-center md:items-center bg-gradient-to-r from-white via-blue-50 to-white rounded-3xl shadow-lg p-8 md:p-12">
+                    <div class="md:w-2/3 w-full mb-8 md:mb-0 md:mr-12 flex items-center">
+                        <p class="text-xl text-blue-900 max-w-3xl text-justify">
+                            <strong>"Issu du live et de l’événementiel, j’ai découvert le mastering comme une évidence. Cette expérience m’a appris à écouter la musique différemment, à en percevoir toute l’énergie et la dynamique.<br>
+                                C’est ainsi qu’est né NMAudio".</strong>
+                        </p>
+                    </div>
+                    <div class="md:w-1/3 w-full flex flex-col items-center">
+                        <img src="assets/img/Nicolas_Martin.JPG" alt="Nicolas Martin"
+                            class="rounded-2xl shadow-xl max-w-xs w-full object-cover" />
+                        <h3 class="text-xl font-bold bg-clip-text mt-4 text-blue-900">Nicolas Martin</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact : informations et formulaire de dépôt de fichiers -->
+    <section id="contact" class="py-20 bg-gradient-to-r from-white to-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-blue-900">Commençons votre projet</h2>
+                <p class="text-xl text-blue-900 max-w-3xl mx-auto">
+                    Prêt à donner vie à vos idées audio ? Partagez vos fichiers et décrivez votre projet.
+                </p>
+            </div>
+            <!-- Bloc contact et bouton de dépôt de fichiers -->
+            <div class="bg-blue-900/5 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-blue-900/10 scale-in">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Coordonnées de contact -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-900">Informations de contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center mr-4 text-white">
+                                    📧
+                                </div>
+                                <div>
+                                    <p class="font-medium text-blue-900">Email</p>
+                                    <p class="text-blue-900">nicolas.nmaudio@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center mr-4 text-white">
+                                    📱
+                                </div>
+                                <div>
+                                    <p class="font-medium text-blue-900">Téléphone</p>
+                                    <p class="text-blue-900">+33 7 72 77 31 68</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4 text-blue-900">
+                                    ⏰
+                                </div>
+                                <div>
+                                    <p class="font-medium text-blue-900">Disponibilité</p>
+                                    <p class="text-blue-900">Lun-Ven 8h-18h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bouton pour accéder à l'espace de dépôt de fichiers -->
+                    <div class="hidden">
+                        <h3 class="text-2xl font-semibold mb-6 text-blue-900">Envoyer vos fichiers</h3>
+                        <p class="text-blue-900 mb-6">
+                            Cliquez sur le bouton ci-dessous pour accéder à mon espace de dépôt sécurisé.
+                            Vous pourrez y télécharger vos fichiers audio et décrire votre projet en détail.
+                        </p>
+                        <button
+                            onclick="window.open('https://drive.google.com/drive/folders/15RKWGBs8Qu8_ViIxvikw8TpnKv1d3Eug?usp=sharing', '_blank')"
+                            class="w-full bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-semibold py-4 px-8 rounded-2xl transition-all transform hover:scale-105 pulse-glow flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                            </svg>
+                            Accéder à l'espace de dépôt
+                        </button>
+                        <p class="text-sm text-blue-900 mt-4 text-center">
+                            Formats acceptés : WAV & AIFF.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page (footer) avec logo, réseaux sociaux et copyright -->
+    <footer class="bg-white py-12 border-t border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Logo du footer -->
+                <div
+                    class="text-2xl font-bold gradient-text bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent mb-4">
+                    <a href="#accueil"><img src="assets/img/Logo_certifie.png" alt="Logo NMAudio"
+                            class="inline-block h-52 w-52 mr-4"></a>
+                </div>
+                <!-- Liens vers les réseaux sociaux -->
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://www.instagram.com/nmaudio_master/"
+                        class="text-blue-700 hover:text-blue-900 transition-colors">
+                        <!-- Icône Instagram -->
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicolas-martin-0040a3362?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
+" class="text-blue-700 hover:text-blue-900 transition-colors">
+                        <!-- Icône LinkedIn -->
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href=" https://www.facebook.com/profile.php?id=61577814537764"
+                        class="text-blue-700 hover:text-blue-900 transition-colors">
+                        <!-- Icône Facebook -->
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                    </a>
+                </div>
+                <!-- Copyright -->
+                <p class="text-blue-900 text-sm">
+                    © 2025 NMAudio. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JS pour la gestion du menu mobile et autres interactions -->
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
